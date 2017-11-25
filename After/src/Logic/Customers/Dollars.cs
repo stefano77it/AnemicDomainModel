@@ -36,12 +36,12 @@ namespace Logic.Customers
 
         public static Dollars operator *(Dollars dollars, decimal multiplier)
         {
-            return new Dollars(dollars.Value * multiplier);
+            return Create(dollars.Value * multiplier).Value;  // from comments in https://app.pluralsight.com/library/courses/refactoring-anemic-domain-model/discussion
         }
 
         public static Dollars operator +(Dollars dollars1, Dollars dollars2)
         {
-            return new Dollars(dollars1.Value + dollars2.Value);
+            return Create(dollars1.Value + dollars2.Value).Value;  // from comments in https://app.pluralsight.com/library/courses/refactoring-anemic-domain-model/discussion
         }
 
         protected override bool EqualsCore(Dollars other)
